@@ -15,7 +15,14 @@ class DB    //root sdal;322$dldS
                 $host = self::HOST;
                 $db   = self::DB;
 
-                $conn = new PDO("mysql:dbname=$db;host=$host", $user, $pass);
-                return $conn;
+                try
+                {
+                        $conn = new PDO("mysql:dbname=$db;host=$host", $user, $pass);
+                        return $conn;
+                }
+                catch(Exception $e){
+                        exit("No db connect");
+                }
         }
 }
+	

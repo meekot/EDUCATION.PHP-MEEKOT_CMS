@@ -1,5 +1,4 @@
 <?php
-
 define("APPLICATION", "application");
 define("CONTROLLER_PATH", APPLICATION. "/controllers/");
 define("MODEL_PATH", APPLICATION. "/models/");

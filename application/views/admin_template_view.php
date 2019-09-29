@@ -179,7 +179,7 @@
     
     </aside>
     <div class="content right" style="width:80%; padding:10px;">
-        <?php include VIEW_PATH.$content_view; ?>
+        <?php include $content_view; ?>
     </div>
     </div>
 <style>

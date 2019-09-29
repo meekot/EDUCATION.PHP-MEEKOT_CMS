@@ -1,5 +1,4 @@
 <?php 
-
 class Route // TODO: RE-WRITE ROUTER
 {
         static function start() //function start routing
@@ -47,10 +46,11 @@ class Route // TODO: RE-WRITE ROUTER
                 include $controller_path;
                 $controller = new $controller_name; //create intest of class with $controller_name like name of class
                 $action = 'action_'.$action_name; 
-
+    
                 if(!method_exists($controller, $action)) //vefify exist method action in class $controller
                 {   
                     Route::ErrorPage404(); //if not exist, error
+                    return;
                 }
                                
                 $controller->$action();
