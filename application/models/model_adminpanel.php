@@ -2,31 +2,6 @@
 
 class Model_Adminpanel extends Model
 {       
-        private $isAdmin = false;
-
-        public function is_admin()
-        {   
-            session_start();
-            
-            if(!isset($_COOKIE['auth']))
-            {
-                return false;
-            }
-            
-            // > find our cookies in DB
-            $result = $this->mysql('SELECT * FROM users WHERE session = :cookies', [
-                'cookies' => $_COOKIE['auth']
-            ]);
-
-            // > if not fined return false
-            if(empty($result[0]))
-            {
-                return false;
-            } 
-
-            return true;
-        }
-
         public function login()
         {   
             // > get post data 'user' $$ 'password'
@@ -64,7 +39,7 @@ class Model_Adminpanel extends Model
             ]);
 
             // > set cookies in user browser
-            setcookie('auth', $cookie, time()+3600);
+            setcookie('auth', $cookie, time()+3600, "/");
 
             return;
         }
@@ -73,5 +48,54 @@ class Model_Adminpanel extends Model
             $result = $this->mysql('SELECT * FROM users');
             
             return $result;
+        }
+
+        public function add_users()
+        {
+            $data = $_POST['data'];
+            
+            $result = $this->verify_array(
+                $data,
+                ['id', 'user', 'tokken', 'password', 'first_name', 'last_name'],
+                ['first_name', 'last_name', 'password'],
+                ['json_field']);
+            
+
+            $this->mysql('INSERT INTO t1 ('.
+            implode(',', $result['insert']['name'])
+            .') VALUES ('.
+            implode(',', $result['insert']['values'])
+            .') ON DUPLICATE KEY UPDATE '.
+            implode(',', $result['updata'])
+            , $result['binds']);
+            
+
+        }
+
+
+        public function verify_array( Array $data, Array $allowInsert, Array $allowUpdate, Array $encodeJson)
+        {   
+            $result = [
+                'insert' => array(),
+                'update' => array(),
+                'binds'  => array()
+
+            ];
+
+            foreach( $data as $key => $value)
+            {
+                    if(in_array($key, $allowInsert))
+                    {
+                        $result['insert']['name'][] = $key;
+                        $result['insert']['value'][] = ':'.$key;
+                    }
+                    if(in_array($key, $allowUpdate))
+                    {
+                        $result['update'][] = $key." =:".$key;
+                    }
+                    $result['binds'][':'.$key] = (in_array($key, $encodeJson))? json_encode($value) : $value; 
+            }
+            
+            return $result; 
         }
 }

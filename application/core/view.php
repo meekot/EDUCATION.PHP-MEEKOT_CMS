@@ -2,12 +2,15 @@
 
 class View
 {
+    function generate_module($templateModule, $moduleData = null)
+    {
+        include $templateModule;
+    }
 
-
-    function generate($content_view, $template_view, $pageData = null)
-    {   $content_view = VIEW_PATH.$content_view;
-        $template_view = VIEW_PATH.$template_view;
-        include $template_view;
+    function generate($contentView, $templateView, $pageData = null)
+    {   $contentView = VIEW_PATH.$contentView;
+        $templateView = VIEW_PATH.$templateView;
+        include $templateView;
     }
 
 }

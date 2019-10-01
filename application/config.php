@@ -10,6 +10,9 @@ require_once APPLICATION. '/core/model.php';
 require_once APPLICATION. '/core/view.php';
 require_once APPLICATION. '/core/controller.php';
 
+require_once APPLICATION. '/modules/post/model_post.php';
+require_once APPLICATION. '/modules/post/controller_post.php';
+
 define("ERRORMODE", true);
 
 Route::start();

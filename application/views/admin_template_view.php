@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <title>Control Panel</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
     </head>
 <body>
 <header class="header">
@@ -181,7 +181,7 @@
     
     </aside>
     <div class="content right" style="width:80%; padding:10px;">
-        <?php include $content_view; ?>
+        <?php include $contentView; ?>
     </div>
     </div>
 <style>

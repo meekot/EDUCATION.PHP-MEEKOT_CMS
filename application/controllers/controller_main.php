@@ -1,7 +1,13 @@
 <?php
 
 class Controller_Main extends Controller
-{
+{       
+        function __construct()
+        {
+            $this->view = new View();
+            $this->post = new Controller_Post();
+        }
+
         function action_index()
         {
             $this->view->generate('main/index.php', 'main_template_view.php');
@@ -37,4 +43,9 @@ class Controller_Main extends Controller
             $this->view->generate('main/single.php', 'main_template_view.php');
         }
 
+        function action_single_1()
+        {
+            $dataPost['post'] = $this->post->get_post(1);
+            $this->view->generate('main/single.php', 'main_template_view.php', $dataPost);
+        }
 }

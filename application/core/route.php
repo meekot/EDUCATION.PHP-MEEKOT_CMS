@@ -1,4 +1,5 @@
 <?php 
+
 class Route // TODO: RE-WRITE ROUTER
 {
         static function start() //function start routing

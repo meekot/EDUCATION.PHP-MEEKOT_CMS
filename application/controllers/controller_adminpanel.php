@@ -52,11 +52,22 @@ class Controller_Adminpanel extends Controller
                                 $this->pageData["edit_users"] = $this->model->edit_users();
                         }
 
-                        $this->view->generate('admin/add_user.php', 'admin_template_view.php', $this->pageData);
+                        $this->view->generate('admin/users_view.php', 'admin_template_view.php', $this->pageData);
                 }
                 else
                 {
                         header("Location: /adminpanel/login");
                 }
         }
+        
+        function action_add_edit_user()
+        {
+                if($this->model->is_admin())
+                {
+                        if(!empty($_POST))
+                        {
+                                
+                        }
+                }
+        } 
 }

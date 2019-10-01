@@ -25,7 +25,7 @@
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    <?php include $content_view; ?>
+    <?php include $contentView; ?>
     
     <script src="/media/js/jquery-3.3.1.min.js"></script>
     <script src="/media/js/jquery-migrate-3.0.0.js"></script>
