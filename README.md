@@ -2,4 +2,4 @@
 
 For portfolio and tests
 
-<a href="http://cms.meekot.com/adminpanel/">DEMO</a>
+<a href="//cms.meekot.com/adminpanel/">DEMO</a>
