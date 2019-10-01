@@ -165,15 +165,17 @@
               </div>
             </div>
             <ul class="list-sidebar bg-defoult">
-              <li> <a href="#" class="active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span></a></li>
-            <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
-            
-      <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
+              <li> <a href="/adminpanel" class="active" > <i class="fa fa-home"></i> <span class="nav-label"> Dashboards </span></a></li>
+            <li> <a href="/adminpanel/user"><i class="fa fa-users"></i> <span class="nav-label">Users</span></a> </li>
+            <li> <a href="/"><i class="fa fa-caret-square-left"></i> <span class="nav-label">Go to site</span></a> </li>
+            <li> <a href="/adminpanel/logout"><i class="fa fa-sign-out-alt"></i><span class="nav-label">Log out</span></a></li>            
+      <!--<li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
       <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
       <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
       <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
       <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
       <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+      -->
     </ul>
     </div>
     
